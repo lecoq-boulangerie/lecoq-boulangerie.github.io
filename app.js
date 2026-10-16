@@ -179,7 +179,7 @@
           if (sel) list.lastChild.querySelector(".item-opt").appendChild(sel);
         });
         var body = el("div", { "class": "menu-sec-body" + (sec.wide ? " wide" : "") }, [
-          el("img", { src: "img/" + sec.img + ".jpg", alt: sec.alt, loading: "lazy", "class": "illus" }),
+          el("img", { src: "img/" + sec.img + ".jpg?v=2", alt: sec.alt, loading: "lazy", "class": "illus" }),
           list
         ]);
         colEl.appendChild(el("article", { "class": "menu-sec", id: "sec-" + sec.id }, [head, body]));
@@ -200,7 +200,7 @@
         parts.appendChild(el("li", { text: t }));
       });
       grid.appendChild(el("article", { "class": "panier" }, [
-        el("img", { src: "img/" + p.img + ".jpg", alt: p.name, loading: "lazy", "class": "illus" }),
+        el("img", { src: "img/" + p.img + ".jpg?v=2", alt: p.name, loading: "lazy", "class": "illus" }),
         el("h3", { text: p.name }),
         el("p", { "class": "panier-price", text: fmt(p.price) }),
         parts,

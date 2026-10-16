@@ -126,6 +126,50 @@ h1, h2, h3 { font-family: var(--display); color: var(--rust); font-weight: 700; 
 .tagline::before { left: 0; } .tagline::after { right: 0; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
 
+/* ---------- bodegón con vapor ---------- */
+.bodegon { position: relative; max-width: 1180px; margin: 8px auto 0; }
+.bodegon img {
+  width: 100%; height: auto; mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse farthest-side at center, #000 74%, transparent 100%);
+  mask-image: radial-gradient(ellipse farthest-side at center, #000 74%, transparent 100%);
+}
+/* vapor dibujado a tinta sobre la hogaza */
+.steam { position: absolute; left: 33%; top: -4%; width: 13%; height: auto; overflow: visible; pointer-events: none; }
+.steam path {
+  fill: none; stroke: var(--ink-soft); stroke-width: 1.6; stroke-linecap: round;
+  stroke-dasharray: 120; stroke-dashoffset: 120; opacity: 0;
+  animation: steam 4.5s ease-in-out infinite;
+}
+.steam path:nth-child(2) { animation-delay: 1.5s; }
+.steam path:nth-child(3) { animation-delay: 3s; }
+@keyframes steam {
+  0%   { stroke-dashoffset: 120; opacity: 0; transform: translateY(12px); }
+  30%  { opacity: .55; }
+  60%  { stroke-dashoffset: 0; opacity: .4; }
+  100% { stroke-dashoffset: -120; opacity: 0; transform: translateY(-14px); }
+}
+
+/* ---------- gallo en bici ---------- */
+.ride { position: relative; height: clamp(170px, 22vw, 230px); overflow: hidden; margin-top: 28px; border-bottom: 1px dashed var(--line); }
+.rider { position: absolute; bottom: -4px; left: 50%; width: clamp(170px, 22vw, 230px); transform: translateX(-50%); }
+.rider img { width: 100%; height: auto; animation: bob .5s ease-in-out infinite alternate; }
+.bubble {
+  position: absolute; left: 88%; top: 8%; white-space: nowrap;
+  background: #fffaf0; border: 1px solid var(--line); border-radius: 14px; padding: 6px 12px;
+  font: italic 500 18px var(--serif); color: var(--rust); box-shadow: var(--shadow);
+}
+.bubble::before {
+  content: ""; position: absolute; left: -7px; bottom: 10px; width: 12px; height: 12px;
+  background: #fffaf0; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); transform: rotate(45deg);
+}
+.js-anim .ride:not(.go) .rider { left: -40%; }
+.js-anim .ride:not(.go) .bubble { opacity: 0; }
+.ride.go .rider { animation: ride-in 2.6s cubic-bezier(.22,.8,.3,1) both; }
+.ride.go .bubble { animation: pop .4s 2.4s ease-out both; }
+@keyframes ride-in { from { left: -40%; } to { left: 50%; } }
+@keyframes bob { from { transform: translateY(0) rotate(-.6deg); } to { transform: translateY(-3px) rotate(.6deg); } }
+@keyframes pop { from { opacity: 0; transform: scale(.6) translateY(6px); } to { opacity: 1; transform: none; } }
+
 /* ---------- cabeceras de sección ---------- */
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 36px; }
 .section-head h1, .section-head h2 { font-size: clamp(32px, 4.4vw, 48px); text-transform: uppercase; letter-spacing: .06em; }
@@ -239,7 +283,10 @@ select:focus, input:focus, textarea:focus { border-color: var(--rust); outline: 
 .drawer-head h2 { font-size: 24px; text-transform: uppercase; letter-spacing: .06em; }
 .icon-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: transparent; font: 26px/1 var(--serif); cursor: pointer; color: var(--ink); }
 .drawer-body { overflow-y: auto; padding: 18px 22px 28px; display: grid; gap: 14px; align-content: start; }
-.empty { color: var(--ink-soft); font-style: italic; margin: 8px 0; }
+.empty { color: var(--ink-soft); font-style: italic; margin: 8px 0; text-align: center; }
+.empty img { width: 170px; height: auto; margin: 4px auto 0; transform-origin: 50% 90%; animation: wobble 2.4s ease-in-out infinite; }
+.empty p { margin: 6px 0 0; }
+@keyframes wobble { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 .lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .line { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; border-bottom: 1px dotted var(--line); padding-bottom: 10px; }
 .line-name small { display: block; color: var(--ink-soft); font-style: italic; font-size: 15px; }
@@ -285,8 +332,13 @@ select:focus, input:focus, textarea:focus { border-color: var(--rust); outline: 
   .menu-sec-body .illus { max-height: 160px; width: auto; justify-self: center; }
   .item-opt { flex-wrap: wrap; }
   .contact a { font-size: 19px; }
+  .rider { left: 38%; }
+  .js-anim .ride.go .rider { animation-name: ride-in-sm; }
+  .bubble { left: 70%; top: 2%; font-size: 15px; }
 }
+@keyframes ride-in-sm { from { left: -40%; } to { left: 38%; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .steam path { stroke-dashoffset: 0; opacity: .35; }
 }

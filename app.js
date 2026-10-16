@@ -313,6 +313,17 @@
     a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hola, Le CoQ. Quería consultar por un pedido.");
   });
 
+  // El gallo entra en bici cuando la sección aparece en pantalla.
+  var ride = $("[data-ride]");
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (ride && !calm && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-anim");
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { ride.classList.add("go"); io.disconnect(); }
+    }, { threshold: 0.5 });
+    io.observe(ride);
+  }
+
   renderMenu();
   renderPaniers();
   renderCart();

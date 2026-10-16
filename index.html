@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le CoQ Boulangerie · Pan de masa madre</title>
+  <meta name="description" content="Le CoQ Boulangerie: pan de masa madre, dulces, tortas y paniers para compartir. El pan como oficio, el tiempo como ingrediente. Pedidos por WhatsApp.">
+  <meta name="theme-color" content="#f3ead8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le CoQ Boulangerie">
+  <meta property="og:description" content="El pan como oficio. El tiempo como ingrediente. Masa madre, dulces, tortas y paniers. Pedidos por WhatsApp.">
+  <meta property="og:image" content="img/panier_famille.jpg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Le CoQ Boulangerie",
+    "slogan": "El pan como oficio. El tiempo como ingrediente.",
+    "telephone": "+56956288639",
+    "servesCuisine": "Panadería artesanal de masa madre",
+    "priceRange": "$$",
+    "currenciesAccepted": "CLP"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#carta">Saltar a la carta</a>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="Le CoQ Boulangerie, inicio">
+      <img src="img/favicon.png" alt="" width="40" height="40">
+      <span>Le CoQ</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#carta">La carta</a>
+      <a href="#paniers">Paniers</a>
+      <a href="#pedidos">Cómo pedir</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-btn" type="button" data-open-cart aria-label="Ver mi pedido">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.6 10.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 9Zm4 0V7a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="cart-label">Mi pedido</span>
+      <span class="cart-count" data-cart-count>0</span>
+    </button>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="hero">
+      <div class="hero-frame">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+
+        <ul class="pillars left" aria-label="Lo que hacemos">
+          <li>Panes</li><li>Dulces</li><li>Tortas</li><li>Productos de temporada</li>
+        </ul>
+        <div class="hero-center">
+          <img class="hero-logo" src="img/logo.png" alt="Le CoQ Boulangerie" width="300" height="291">
+          <p class="tagline">El pan como oficio. El tiempo como ingrediente.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#carta">Ver la carta</a>
+            <a class="btn btn-ghost" data-wa-direct href="https://wa.me/56971858142" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          </div>
+        </div>
+        <ul class="pillars right" aria-label="Cómo lo hacemos">
+          <li>Masa madre</li><li>Ingredientes locales</li><li>Tradición</li><li>El pan como oficio</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="carta" id="carta" aria-labelledby="carta-title">
+      <div class="section-head">
+        <p class="eyebrow">Nuestro obrador</p>
+        <h1 id="carta-title">La carta</h1>
+        <p class="lede">Hogazas de fermentación lenta, dulces del día y encargos para la mesa grande. Pulsa <b>+</b> para ir armando tu pedido.</p>
+        <div class="fleur" aria-hidden="true">⚜</div>
+      </div>
+      <div class="menu-grid" data-menu></div>
+    </section>
+
+    <!-- PANIERS -->
+    <section class="paniers" id="paniers" aria-labelledby="paniers-title">
+      <div class="paniers-frame">
+        <div class="section-head">
+          <h2 id="paniers-title">Les Paniers Le CoQ</h2>
+          <p class="eyebrow">Una selección de nuestro obrador para compartir</p>
+          <div class="fleur" aria-hidden="true">⚜</div>
+        </div>
+        <div class="panier-grid" data-paniers></div>
+      </div>
+    </section>
+
+    <!-- CÓMO PEDIR -->
+    <section class="pedidos" id="pedidos" aria-labelledby="pedidos-title">
+      <div class="section-head">
+        <p class="eyebrow">Sin complicaciones</p>
+        <h2 id="pedidos-title">Cómo pedir</h2>
+        <div class="fleur" aria-hidden="true">⚜</div>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-n">I</span>
+          <h3>Elige</h3>
+          <p>Añade a tu pedido lo que quieras de la carta o un panier. Elige la variedad de Campagne y el sabor de los muffins.</p>
+        </li>
+        <li>
+          <span class="step-n">II</span>
+          <h3>Envía</h3>
+          <p>Abre tu pedido, indica tu nombre y para qué día lo quieres, y envíalo. Se abre WhatsApp con todo escrito.</p>
+        </li>
+        <li>
+          <span class="step-n">III</span>
+          <h3>Confirmamos</h3>
+          <p>Te respondemos por WhatsApp para confirmar disponibilidad, día y forma de entrega.</p>
+        </li>
+      </ol>
+      <p class="notice"><span aria-hidden="true">⚜</span> Las tortas y los panes especiales se encargan con <b>3 días de anticipación</b>. Las focaccias salen los fines de semana.</p>
+    </section>
+  </main>
+
+  <!-- CONTACTO -->
+  <footer class="footer" id="contacto">
+    <div class="footer-inner">
+      <img src="img/logo.png" alt="Le CoQ Boulangerie" width="120" height="116" loading="lazy">
+      <div>
+        <h2>Haz tus pedidos</h2>
+        <ul class="contact">
+          <li>
+            <a href="https://wa.me/56971858142" target="_blank" rel="noopener" data-wa-direct>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.6 8.3c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2.1.4 0 .6l-.5.6c-.1.2-.2.3 0 .6.6 1 1.4 1.8 2.5 2.4.3.1.4.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .5-.2 1.2-.7 1.5-.6.4-1.4.6-2.3.3-2.6-.8-4.6-2.8-5.5-5.4-.3-.9 0-1.9.1-2.5Z" fill="currentColor"/></svg>
+              <span><small>WhatsApp</small>+56 9 7185 8142</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+56956288639">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 3l1.6 4-2 1.3a11 11 0 0 0 7.1 7.1l1.3-2 4 1.6-.5 2.4a2 2 0 0 1-2 1.6C10.6 19 5 13.4 5 5.5a2 2 0 0 1 1.6-2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <span><small>Teléfono</small>+56 9 5628 8639</span>
+            </a>
+          </li>
+        </ul>
+        <p class="footer-note">Las tortas y los panes especiales se encargan con 3 días de anticipación.</p>
+      </div>
+    </div>
+    <p class="colophon">© <span data-year></span> Le CoQ Boulangerie · El pan como oficio. El tiempo como ingrediente.</p>
+  </footer>
+
+  <!-- PEDIDO -->
+  <div class="scrim" data-scrim hidden></div>
+  <aside class="drawer" data-drawer aria-labelledby="drawer-title" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <h2 id="drawer-title">Mi pedido</h2>
+      <button type="button" class="icon-btn" data-close-cart aria-label="Cerrar">×</button>
+    </div>
+    <div class="drawer-body">
+      <p class="empty" data-empty>Aún no has añadido nada. Pulsa <b>+</b> en la carta.</p>
+      <ul class="lines" data-lines></ul>
+      <p class="advance-warn" data-advance-warn hidden>Tu pedido incluye productos por encargo: elige una fecha con al menos 3 días de anticipación.</p>
+      <p class="weekend-warn" data-weekend-warn hidden>Las focaccias (y los paniers que la llevan) salen el fin de semana: elige sábado o domingo.</p>
+      <form class="order-form" data-form novalidate>
+        <label>Tu nombre
+          <input name="nombre" autocomplete="name" required maxlength="60">
+        </label>
+        <label>¿Para qué día?
+          <input name="fecha" type="date" required>
+        </label>
+        <label>Comentarios <span class="opt">(opcional)</span>
+          <textarea name="nota" rows="2" maxlength="300" placeholder="Piezas dulces elegidas, retiro o despacho…"></textarea>
+        </label>
+        <div class="total-row"><span>Total</span><strong data-total>$ 0</strong></div>
+        <p class="form-error" data-form-error role="alert" hidden></p>
+        <button class="btn btn-primary btn-block" type="submit">Enviar pedido por WhatsApp</button>
+        <button class="link-btn" type="button" data-clear>Vaciar pedido</button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
